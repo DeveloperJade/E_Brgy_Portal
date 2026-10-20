@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>E-Barangay Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400..700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+            sans: ['Figtree', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+  <!-- Supabase JS client (exposes window.supabase) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-slate-50 font-sans text-slate-800 antialiased">
+  <div id="app"></div>
+  <div id="toasts" class="pointer-events-none fixed inset-x-4 bottom-4 z-50 flex flex-col gap-2 sm:left-auto sm:right-4 sm:w-96" aria-live="polite"></div>
+  <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/85 p-4" data-action="close-lightbox" role="dialog" aria-modal="true" aria-label="Attachment preview">
+    <button type="button" class="absolute right-4 top-4 rounded-full bg-white/10 p-2 text-white hover:bg-white/20" data-action="close-lightbox" aria-label="Close preview">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <button type="button" id="lightbox-prev" class="absolute left-3 top-1/2 hidden -translate-y-1/2 rounded-full bg-white/10 p-2 text-white hover:bg-white/20 sm:left-6" data-action="lightbox-prev" aria-label="Previous photo">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <button type="button" id="lightbox-next" class="absolute right-3 top-1/2 hidden -translate-y-1/2 rounded-full bg-white/10 p-2 text-white hover:bg-white/20 sm:right-6" data-action="lightbox-next" aria-label="Next photo">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
+    <p id="lightbox-count" class="absolute bottom-4 left-1/2 hidden -translate-x-1/2 rounded-full bg-slate-900/70 px-3 py-1 text-sm font-medium text-white" aria-live="polite"></p>
+    <img id="lightbox-img" src="" alt="Attachment, full size" class="max-h-full max-w-full rounded-lg object-contain">
+  </div>
+
+<script src="app.js"></script>
+</body>
+</html>
