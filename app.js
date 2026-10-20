@@ -51,8 +51,8 @@
 
 /* ------------------------------------------------------------------ CONFIG */
 const CONFIG = {
-  supabaseUrl: 'YOUR_SUPABASE_URL',
-  supabaseKey: 'YOUR_SUPABASE_ANON_KEY',
+  supabaseUrl: 'https://vizqlcnkcjfyohjdojzo.supabase.co',
+  supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZpenFsY25rY2pmeW9oamRvanpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI0NzQ4MDEsImV4cCI6MjEwODA1MDgwMX0.oJohiHVfKqM0BkzeUWp-cTIas0kko-x8bQ7QA3t34fw',
   storageBucket: 'submission-images',
   barangayName: 'Barangay San Isidro',
   aiMode: 'mock' // 'mock' | 'edge-function'
